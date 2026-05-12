@@ -1,0 +1,1336 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>宝马B48发动机漏水维修 — 华胜无锡东亭店</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700;900&family=Noto+Sans+SC:wght@300;400;500;700&family=DM+Mono:wght@400;500&display=swap');
+
+  :root {
+    --navy: #0a1628;
+    --navy-mid: #132240;
+    --navy-light: #1a2d52;
+    --gold: #c9a84c;
+    --gold-light: #e2c97e;
+    --gold-dim: rgba(201,168,76,0.15);
+    --copper: #b87333;
+    --cream: #f5f0e8;
+    --cream-dark: #e8e0d0;
+    --text-light: #c8cdd8;
+    --text-dim: #8a95a8;
+    --white: #ffffff;
+    --red-soft: #c0392b;
+    --green-soft: #27ae60;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Noto Sans SC', sans-serif;
+    background: var(--navy);
+    color: var(--text-light);
+    line-height: 1.8;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  /* === NOISE OVERLAY === */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 9999;
+  }
+
+  /* === HERO === */
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 80% 60% at 50% 40%, rgba(201,168,76,0.08) 0%, transparent 70%),
+      radial-gradient(ellipse 60% 80% at 20% 80%, rgba(10,22,40,0.9) 0%, transparent 60%),
+      linear-gradient(180deg, var(--navy) 0%, var(--navy-mid) 50%, var(--navy) 100%);
+    z-index: 1;
+  }
+
+  .hero-bg-lines {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+  }
+
+  .hero-bg-lines::before,
+  .hero-bg-lines::after {
+    content: '';
+    position: absolute;
+    background: linear-gradient(180deg, transparent, rgba(201,168,76,0.06), transparent);
+    width: 1px;
+  }
+
+  .hero-bg-lines::before {
+    left: 25%;
+    top: -20%;
+    height: 140%;
+    transform: rotate(3deg);
+  }
+
+  .hero-bg-lines::after {
+    right: 30%;
+    top: -10%;
+    height: 120%;
+    transform: rotate(-2deg);
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 720px;
+    animation: fadeUp 1s ease-out;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 18px;
+    border: 1px solid rgba(201,168,76,0.3);
+    border-radius: 100px;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--gold);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+    background: rgba(201,168,76,0.05);
+    animation: fadeUp 1s ease-out 0.2s both;
+  }
+
+  .hero-badge .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--gold);
+    animation: pulse 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.4; transform: scale(0.8); }
+  }
+
+  .hero h1 {
+    font-family: 'Noto Serif SC', serif;
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    font-weight: 900;
+    color: var(--white);
+    line-height: 1.3;
+    margin-bottom: 1.5rem;
+    animation: fadeUp 1s ease-out 0.3s both;
+  }
+
+  .hero h1 em {
+    font-style: normal;
+    color: var(--gold);
+    position: relative;
+  }
+
+  .hero h1 em::after {
+    content: '';
+    position: absolute;
+    bottom: 2px;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--gold), transparent);
+    border-radius: 2px;
+  }
+
+  .hero-sub {
+    font-size: 1.1rem;
+    color: var(--text-dim);
+    max-width: 520px;
+    margin: 0 auto 2.5rem;
+    line-height: 1.9;
+    animation: fadeUp 1s ease-out 0.5s both;
+  }
+
+  .hero-sub strong {
+    color: var(--text-light);
+    font-weight: 500;
+  }
+
+  .hero-en {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.85rem;
+    color: var(--gold-dim);
+    letter-spacing: 1px;
+    animation: fadeUp 1s ease-out 0.4s both;
+  }
+
+  .scroll-hint {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    animation: fadeUp 1s ease-out 0.8s both;
+  }
+
+  .scroll-hint span {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--text-dim);
+  }
+
+  .scroll-hint .line {
+    width: 1px;
+    height: 40px;
+    background: linear-gradient(180deg, var(--gold), transparent);
+    animation: scrollLine 2s ease-in-out infinite;
+  }
+
+  @keyframes scrollLine {
+    0% { transform: scaleY(0); transform-origin: top; }
+    50% { transform: scaleY(1); transform-origin: top; }
+    51% { transform-origin: bottom; }
+    100% { transform: scaleY(0); transform-origin: bottom; }
+  }
+
+  /* === SECTIONS === */
+  .section {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 5rem 1.5rem;
+  }
+
+  .section-divider {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  .section-divider .line {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(201,168,76,0.2), transparent);
+  }
+
+  .section-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .section-label::before {
+    content: '';
+    width: 24px;
+    height: 1px;
+    background: var(--gold);
+  }
+
+  .section-title {
+    font-family: 'Noto Serif SC', serif;
+    font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 1rem;
+    line-height: 1.4;
+  }
+
+  .section-desc {
+    color: var(--text-dim);
+    font-size: 1rem;
+    max-width: 600px;
+    margin-bottom: 3rem;
+    line-height: 1.9;
+  }
+
+  /* === PROBLEM CARDS === */
+  .problem-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+
+  .problem-card {
+    position: relative;
+    background: linear-gradient(135deg, var(--navy-mid), var(--navy-light));
+    border: 1px solid rgba(201,168,76,0.1);
+    border-radius: 12px;
+    padding: 2rem;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    overflow: hidden;
+  }
+
+  .problem-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--gold), var(--copper), transparent);
+    opacity: 0;
+    transition: opacity 0.4s;
+  }
+
+  .problem-card:hover {
+    border-color: rgba(201,168,76,0.25);
+    transform: translateY(-4px);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+  }
+
+  .problem-card:hover::before {
+    opacity: 1;
+  }
+
+  .problem-card.common {
+    border-color: rgba(201,168,76,0.2);
+  }
+
+  .problem-card.common::after {
+    content: '最常见';
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    padding: 3px 10px;
+    background: var(--gold);
+    color: var(--navy);
+    font-size: 0.65rem;
+    font-weight: 700;
+    border-radius: 4px;
+    letter-spacing: 1px;
+  }
+
+  .problem-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 10px;
+    background: var(--gold-dim);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.25rem;
+    font-size: 1.3rem;
+  }
+
+  .problem-card h3 {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 0.5rem;
+  }
+
+  .problem-card .en-name {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--gold);
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+    opacity: 0.7;
+  }
+
+  .problem-card p {
+    font-size: 0.9rem;
+    color: var(--text-dim);
+    line-height: 1.8;
+    margin-bottom: 1rem;
+  }
+
+  .symptom-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 12px;
+    background: rgba(192,57,43,0.1);
+    border: 1px solid rgba(192,57,43,0.15);
+    border-radius: 6px;
+    font-size: 0.75rem;
+    color: #e8736a;
+    margin: 3px 4px 3px 0;
+  }
+
+  .symptom-tag::before {
+    content: '';
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: #c0392b;
+  }
+
+  /* === CASE STUDY === */
+  .case-study {
+    background: linear-gradient(135deg, var(--navy-mid), var(--navy-light));
+    border: 1px solid rgba(201,168,76,0.15);
+    border-radius: 16px;
+    padding: 3rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .case-study::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(201,168,76,0.05), transparent 70%);
+    pointer-events: none;
+  }
+
+  .case-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .case-avatar {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--gold), var(--copper));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Noto Serif SC', serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--navy);
+  }
+
+  .case-meta h3 {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 1.1rem;
+    color: var(--white);
+    font-weight: 700;
+  }
+
+  .case-meta span {
+    font-size: 0.8rem;
+    color: var(--text-dim);
+  }
+
+  .case-story {
+    font-size: 0.95rem;
+    line-height: 2;
+    color: var(--text-light);
+    margin-bottom: 2rem;
+  }
+
+  .case-story strong {
+    color: var(--gold-light);
+    font-weight: 500;
+  }
+
+  .cost-breakdown {
+    background: rgba(0,0,0,0.2);
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .cost-breakdown h4 {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1rem;
+  }
+
+  .cost-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.6rem 0;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+    font-size: 0.9rem;
+  }
+
+  .cost-row:last-of-type {
+    border-bottom: none;
+  }
+
+  .cost-row .label {
+    color: var(--text-dim);
+  }
+
+  .cost-row .value {
+    font-family: 'DM Mono', monospace;
+    color: var(--text-light);
+  }
+
+  .cost-row.total {
+    border-top: 1px solid rgba(201,168,76,0.2);
+    margin-top: 0.5rem;
+    padding-top: 1rem;
+    font-weight: 700;
+  }
+
+  .cost-row.total .label {
+    color: var(--white);
+  }
+
+  .cost-row.total .value {
+    color: var(--gold);
+    font-size: 1.2rem;
+  }
+
+  .case-insight {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 1rem 1.25rem;
+    background: var(--gold-dim);
+    border-radius: 8px;
+    border-left: 3px solid var(--gold);
+  }
+
+  .case-insight .icon {
+    font-size: 1.2rem;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .case-insight p {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    line-height: 1.7;
+  }
+
+  /* === COMPARISON === */
+  .compare-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+  }
+
+  .compare-card {
+    border-radius: 12px;
+    padding: 2rem;
+    text-align: center;
+    position: relative;
+  }
+
+  .compare-card.dealer {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .compare-card.huasheng {
+    background: linear-gradient(135deg, rgba(201,168,76,0.08), rgba(184,115,51,0.05));
+    border: 1px solid rgba(201,168,76,0.2);
+  }
+
+  .compare-card .tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 0.75rem;
+  }
+
+  .compare-card.dealer .tag { color: var(--text-dim); }
+  .compare-card.huasheng .tag { color: var(--gold); }
+
+  .compare-card .price {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 2rem;
+    font-weight: 900;
+    margin-bottom: 0.25rem;
+  }
+
+  .compare-card.dealer .price { color: var(--text-dim); }
+  .compare-card.huasheng .price { color: var(--gold); }
+
+  .compare-card .unit {
+    font-size: 0.8rem;
+    color: var(--text-dim);
+  }
+
+  .compare-card .save-badge {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 4px 14px;
+    background: var(--gold);
+    color: var(--navy);
+    font-size: 0.75rem;
+    font-weight: 700;
+    border-radius: 100px;
+  }
+
+  /* === ADVANTAGES === */
+  .advantage-list {
+    display: grid;
+    gap: 1.25rem;
+  }
+
+  .advantage-item {
+    display: flex;
+    gap: 1.25rem;
+    padding: 1.75rem;
+    background: linear-gradient(135deg, var(--navy-mid), var(--navy-light));
+    border: 1px solid rgba(201,168,76,0.08);
+    border-radius: 12px;
+    transition: all 0.3s;
+  }
+
+  .advantage-item:hover {
+    border-color: rgba(201,168,76,0.2);
+    transform: translateX(4px);
+  }
+
+  .advantage-num {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--gold);
+    width: 28px;
+    height: 28px;
+    border: 1px solid rgba(201,168,76,0.3);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .advantage-content h3 {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 0.5rem;
+  }
+
+  .advantage-content p {
+    font-size: 0.88rem;
+    color: var(--text-dim);
+    line-height: 1.8;
+  }
+
+  /* === PACKAGE === */
+  .package-box {
+    background: linear-gradient(135deg, var(--navy-mid), var(--navy-light));
+    border: 1px solid rgba(201,168,76,0.15);
+    border-radius: 16px;
+    padding: 2.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .package-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--gold), var(--copper), var(--gold));
+  }
+
+  .package-title {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 0.5rem;
+  }
+
+  .package-sub {
+    font-size: 0.85rem;
+    color: var(--text-dim);
+    margin-bottom: 2rem;
+  }
+
+  .check-list {
+    list-style: none;
+    display: grid;
+    gap: 0.75rem;
+  }
+
+  .check-list li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 0.95rem;
+    color: var(--text-light);
+  }
+
+  .check-list .check {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: rgba(39,174,96,0.15);
+    border: 1px solid rgba(39,174,96,0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .check-list .check svg {
+    width: 12px;
+    height: 12px;
+    stroke: #27ae60;
+    fill: none;
+    stroke-width: 2.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .package-note {
+    margin-top: 1.5rem;
+    padding: 1rem 1.25rem;
+    background: var(--gold-dim);
+    border-radius: 8px;
+    font-size: 0.85rem;
+    color: var(--gold-light);
+    text-align: center;
+    font-weight: 500;
+  }
+
+  /* === CHECKLIST === */
+  .checklist-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+
+  .checklist-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0.9rem 1.1rem;
+    background: rgba(192,57,43,0.06);
+    border: 1px solid rgba(192,57,43,0.1);
+    border-radius: 8px;
+    font-size: 0.88rem;
+    color: var(--text-light);
+    transition: all 0.3s;
+  }
+
+  .checklist-item:hover {
+    background: rgba(192,57,43,0.1);
+    border-color: rgba(192,57,43,0.2);
+  }
+
+  .checklist-item .warn {
+    color: #e8736a;
+    flex-shrink: 0;
+    font-size: 1rem;
+  }
+
+  /* === CTA === */
+  .cta-section {
+    text-align: center;
+    padding: 5rem 1.5rem;
+    position: relative;
+  }
+
+  .cta-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 70% 50% at 50% 50%, rgba(201,168,76,0.06), transparent);
+    pointer-events: none;
+  }
+
+  .cta-content {
+    position: relative;
+    z-index: 1;
+    max-width: 560px;
+    margin: 0 auto;
+  }
+
+  .cta-content h2 {
+    font-family: 'Noto Serif SC', serif;
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 0.75rem;
+  }
+
+  .cta-content p {
+    color: var(--text-dim);
+    font-size: 0.95rem;
+    margin-bottom: 2rem;
+    line-height: 1.8;
+  }
+
+  .cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 36px;
+    background: linear-gradient(135deg, var(--gold), var(--copper));
+    color: var(--navy);
+    font-family: 'Noto Sans SC', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-decoration: none;
+    box-shadow: 0 8px 30px rgba(201,168,76,0.25);
+  }
+
+  .cta-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 40px rgba(201,168,76,0.35);
+  }
+
+  .cta-btn svg {
+    width: 18px;
+    height: 18px;
+    stroke: var(--navy);
+    fill: none;
+    stroke-width: 2.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .cta-trust {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+
+  .cta-trust span {
+    font-size: 0.75rem;
+    color: var(--text-dim);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .cta-trust .dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--gold);
+    opacity: 0.5;
+  }
+
+  /* === FOOTER === */
+  footer {
+    text-align: center;
+    padding: 2rem 1.5rem 3rem;
+    border-top: 1px solid rgba(255,255,255,0.04);
+  }
+
+  footer p {
+    font-size: 0.75rem;
+    color: var(--text-dim);
+    opacity: 0.6;
+  }
+
+  /* === SCROLL ANIMATIONS === */
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+  .reveal-delay-4 { transition-delay: 0.4s; }
+
+  /* === RESPONSIVE === */
+  @media (max-width: 768px) {
+    .problem-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .compare-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .checklist-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .case-study {
+      padding: 2rem 1.5rem;
+    }
+
+    .section {
+      padding: 3.5rem 1.25rem;
+    }
+
+    .hero {
+      min-height: 85vh;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .hero h1 {
+      font-size: 1.7rem;
+    }
+
+    .problem-card {
+      padding: 1.5rem;
+    }
+
+    .cta-trust {
+      flex-direction: column;
+      align-items: center;
+      gap: 0.75rem;
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg-lines"></div>
+  <div class="hero-content">
+    <div class="hero-badge">
+      <span class="dot"></span>
+      BMW B48 Engine
+    </div>
+    <p class="hero-en">专业维修保养 · 华胜无锡东亭店</p>
+    <h1>宝马B48发动机漏水是通病？<br><em>别慌，一次搞定。</em></h1>
+    <p class="hero-sub">
+      从3系、5系、X3到X5，搭载B48发动机的宝马几乎都会遇到同一个问题——<strong>冷却液报警、发动机漏水</strong>。不是你运气不好，是先天设计特点。<br><br>
+      <strong>华胜连锁 · 奔驰宝马奥迪专修 · 新增特斯拉维修</strong>
+    </p>
+  </div>
+  <div class="scroll-hint">
+    <span>Scroll</span>
+    <div class="line"></div>
+  </div>
+</section>
+
+<!-- WHY IT LEAKS -->
+<section class="section">
+  <div class="reveal">
+    <div class="section-label">Part 01 — 问题解析</div>
+    <h2 class="section-title">B48发动机为什么会漏水？</h2>
+    <p class="section-desc">自2015年推出以来，B48凭借出色的动力响应和燃油经济性广受好评。但在长期使用中，冷却系统有几个"软肋"。</p>
+  </div>
+
+  <div class="problem-grid">
+    <div class="problem-card common reveal reveal-delay-1">
+      <div class="problem-icon">🔧</div>
+      <h3>回水管断裂</h3>
+      <div class="en-name">Return Pipe / Expansion Hose</div>
+      <p>回水管接头处是塑料材质，经过高温老化后变脆，<strong style="color:var(--gold-light)">行驶中突然断裂</strong>，冷却液瞬间漏光。很多车主在高速上直接看到"冷却液过低"报警，只能叫拖车。</p>
+      <div>
+        <span class="symptom-tag">发动机舱冒白烟</span>
+        <span class="symptom-tag">冷却液灯亮</span>
+        <span class="symptom-tag">暖风不热</span>
+      </div>
+    </div>
+
+    <div class="problem-card reveal reveal-delay-2">
+      <div class="problem-icon">💧</div>
+      <h3>水泵漏水</h3>
+      <div class="en-name">Electric Water Pump</div>
+      <p>电子水泵是B48的另一个薄弱环节。水泵内部的密封圈老化后，冷却液会从水泵壳体渗出。</p>
+      <div>
+        <span class="symptom-tag">车底液体痕迹</span>
+        <span class="symptom-tag">冷车液位下降</span>
+      </div>
+    </div>
+
+    <div class="problem-card reveal reveal-delay-3">
+      <div class="problem-icon">🫧</div>
+      <h3>副水壶开裂</h3>
+      <div class="en-name">Expansion Tank</div>
+      <p>副水壶长期承受高温高压，接缝处容易开裂，冷却液从裂缝缓慢渗出。</p>
+      <div>
+        <span class="symptom-tag">表面白色结晶</span>
+        <span class="symptom-tag">冷却液缓慢减少</span>
+      </div>
+    </div>
+
+    <div class="problem-card reveal reveal-delay-4">
+      <div class="problem-icon">⛽</div>
+      <h3>机油滤清器底座垫老化</h3>
+      <div class="en-name">Oil Filter Housing Gasket</div>
+      <p>位置隐蔽，冷却液通过密封垫渗漏，甚至可能混入机油中，导致机油乳化。</p>
+      <div>
+        <span class="symptom-tag">机油乳化</span>
+        <span class="symptom-tag">找不到明显漏点</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"><div class="line"></div></div>
+
+<!-- CASE STUDY -->
+<section class="section">
+  <div class="reveal">
+    <div class="section-label">Part 02 — 真实案例</div>
+    <h2 class="section-title">无锡车主的维修经历</h2>
+  </div>
+
+  <div class="case-study reveal">
+    <div class="case-header">
+      <div class="case-avatar">张</div>
+      <div class="case-meta">
+        <h3>张先生 · 无锡</h3>
+        <span>2018款 宝马320Li（B48）· 8万公里</span>
+      </div>
+    </div>
+
+    <div class="case-story">
+      某天在高速上突然弹出<strong>"冷却液过低"</strong>警告，拖到附近修理厂检查，发现是<strong>回水管断裂</strong>。修理厂告诉他，水泵和副水壶可能也撑不了多久，建议"一次性解决"。
+    </div>
+
+    <div class="cost-breakdown">
+      <h4>费用明细</h4>
+      <div class="cost-row">
+        <span class="label">原厂回水管总成</span>
+        <span class="value">¥480</span>
+      </div>
+      <div class="cost-row">
+        <span class="label">冷却液补充</span>
+        <span class="value">¥120</span>
+      </div>
+      <div class="cost-row">
+        <span class="label">工时费</span>
+        <span class="value">¥300</span>
+      </div>
+      <div class="cost-row total">
+        <span class="label">合计</span>
+        <span class="value">≈ ¥900</span>
+      </div>
+    </div>
+
+    <div class="case-insight">
+      <span class="icon">💡</span>
+      <p>与其分批修，不如一次根治——这是华胜无锡东亭店经常跟车主建议的思路。最麻烦的不是费用，而是<strong style="color:var(--gold-light)">被扔在路上</strong>。</p>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"><div class="line"></div></div>
+
+<!-- WHY HUASHENG -->
+<section class="section">
+  <div class="reveal">
+    <div class="section-label">Part 03 — 为什么选华胜</div>
+    <h2 class="section-title">华胜无锡东亭店的优势</h2>
+  </div>
+
+  <!-- Price Comparison -->
+  <div class="compare-grid reveal">
+    <div class="compare-card dealer">
+      <div class="tag">4S 店报价</div>
+      <div class="price">¥1,500 ~ 2,000</div>
+      <div class="unit">回水管更换总费用</div>
+    </div>
+    <div class="compare-card huasheng">
+      <div class="tag">华胜 无锡东亭店</div>
+      <div class="price">¥900 ~ 1,200</div>
+      <div class="unit">回水管更换总费用</div>
+      <div class="save-badge">省 30%~40%</div>
+    </div>
+  </div>
+
+  <div class="advantage-list">
+    <div class="advantage-item reveal reveal-delay-1">
+      <div class="advantage-num">01</div>
+      <div class="advantage-content">
+        <h3>专修宝马，经验丰富</h3>
+        <p>华胜是全国连锁豪华车专修品牌，深耕豪车维修20多年。无锡东亭店的技师每天接触宝马、奔驰、奥迪，对B48发动机的漏水问题已经熟到闭着眼都能修。回水管怎么拆最省事、水泵密封圈怎么装最不容易二次泄漏——这些细节只有大量实战经验才能积累。</p>
+      </div>
+    </div>
+
+    <div class="advantage-item reveal reveal-delay-2">
+      <div class="advantage-num">02</div>
+      <div class="advantage-content">
+        <h3>价格透明，明码标价</h3>
+        <p>所有维修项目明码标价，绝无隐形消费。同样的原厂配件、同样的维修标准，价格比4S店低30%-40%。没有品牌溢价，只有实打实的技术和服务。</p>
+      </div>
+    </div>
+
+    <div class="advantage-item reveal reveal-delay-3">
+      <div class="advantage-num">03</div>
+      <div class="advantage-content">
+        <h3>新增特斯拉维修</h3>
+        <p>紧跟市场步伐，华胜无锡东亭店现已全面开展<strong>特斯拉维修保养</strong>服务！涵盖三电系统检测、底盘维修、空调系统、车身电器等，新能源车同样享受华胜专业级服务。</p>
+      </div>
+    </div>
+
+    <div class="advantage-item reveal reveal-delay-4">
+      <div class="advantage-num">04</div>
+      <div class="advantage-content">
+        <h3>一次性根治方案</h3>
+        <p>不是哪里漏修哪里，而是全车冷却系统全面检修，一次解决问题，避免反复返修。</p>
+      </div>
+    </div>
+
+    <div class="advantage-item reveal reveal-delay-5">
+      <div class="advantage-num">05</div>
+      <div class="advantage-content">
+        <h3>省心省力</h3>
+        <p>位于锡山区东亭街道锡沪东路118号，位置便利，交通方便。维修全程可视频监控，零件旧件展示，让你明明白白消费。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"><div class="line"></div></div>
+
+<!-- PRICE LIST -->
+<section class="section">
+  <div class="reveal">
+    <div class="section-label">Part 04 — 价目表</div>
+    <h2 class="section-title">华胜无锡东亭店 · 透明价格体系</h2>
+    <p class="section-desc">所有项目明码标价，配件支持验货，欢迎到店比价。</p>
+  </div>
+
+  <div class="package-box reveal">
+    <div class="package-title">🚗 发动机维修系列</div>
+    <div class="package-sub"></div>
+    <div style="overflow-x:auto;">
+      <table style="width:100%; border-collapse:collapse; font-size:0.95rem;">
+        <tr style="border-bottom:1px solid rgba(201,168,76,0.2);">
+          <th style="text-align:left; padding:12px 8px; color:var(--gold); font-weight:600;">项目</th>
+          <th style="text-align:center; padding:12px 8px; color:var(--gold); font-weight:600;">价格</th>
+          <th style="text-align:right; padding:12px 8px; color:var(--gold); font-weight:600;">备注</th>
+        </tr>
+        <tr style="border-bottom:1px solid rgba(255,255,255,0.04);">
+          <td style="padding:10px 8px; color:var(--text-light);">B48发动机回水管更换</td>
+          <td style="padding:10px 8px; text-align:center; color:var(--gold); font-family:'DM Mono',monospace; font-weight:700;">¥680</td>
+          <td style="padding:10px 8px; text-align:right; color:var(--text-dim);">加强型接头</td>
+        </tr>
+        <tr style="border-bottom:1px solid rgba(255,255,255,0.04);">
+          <td style="padding:10px 8px; color:var(--text-light);">B48全车冷却系统维修（回水管+水泵+副水壶+冷却液+工时）</td>
+          <td style="padding:10px 8px; text-align:center; color:var(--gold); font-family:'DM Mono',monospace; font-weight:700;">¥2,280</td>
+          <td style="padding:10px 8px; text-align:right; color:var(--text-dim);">一次性根治方案</td>
+        </tr>
+        <tr style="border-bottom:1px solid rgba(255,255,255,0.04);">
+          <td style="padding:10px 8px; color:var(--text-light);">机油保养（含机油+机滤+工时）</td>
+          <td style="padding:10px 8px; text-align:center; color:var(--gold); font-family:'DM Mono',monospace; font-weight:700;">¥380 起</td>
+          <td style="padding:10px 8px; text-align:right; color:var(--text-dim);">全合成机油</td>
+        </tr>
+        <tr style="border-bottom:1px solid rgba(255,255,255,0.04);">
+          <td style="padding:10px 8px; color:var(--text-light);">全车安全检查</td>
+          <td style="padding:10px 8px; text-align:center; color:var(--gold); font-family:'DM Mono',monospace; font-weight:700;">免费</td>
+          <td style="padding:10px 8px; text-align:right; color:var(--text-dim);">到店即享</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="package-box reveal" style="margin-top:1.5rem;">
+    <div class="package-title">🔧 其他常见维修项目</div>
+    <div class="package-sub"></div>
+    <div style="overflow-x:auto;">
+      <table style="width:100%; border-collapse:collapse; font-size:0.95rem;">
+        <tr style="border-bottom:1px solid rgba(201,168,76,0.2);">
+          <th style="text-align:left; padding:12px 8px; color:var(--gold); font-weight:600;">项目</th>
+          <th style="text-align:center; padding:12px 8px; color:var(--gold); font-weight:600;">价格</th>
+          <th style="text-align:right; padding:12px 8px; color:var(--gold); font-weight:600;">备注</th>
+        </tr>
+        <tr style="border-bottom:1px solid rgba(255,255,255,0.04);">
+          <td style="padding:10px 8px; color:var(--text-light);">更换火花塞（含工时）</td>
+          <td style="padding:10px 8px; text-align:center; color:var(--gold); font-family:'DM Mono',monospace; font-weight:700;">¥280</td>
+          <td style="padding:10px 8px; text-align:right; color:var(--text-dim);">4支</td>
+        </tr>
+        <tr style="border-bottom:1px solid rgba(255,255,255,0.04);">
+          <td style="padding:10px 8px; color:var(--text-light);">更换刹车片（前/后轮）</td>
+          <td style="padding:10px 8px; text-align:center; color:var(--gold); font-family:'DM Mono',monospace; font-weight:700;">¥380 起/副</td>
+          <td style="padding:10px 8px; text-align:right; color:var(--text-dim);">品牌配件</td>
+        </tr>
+        <tr style="border-bottom:1px solid rgba(255,255,255,0.04);">
+          <td style="padding:10px 8px; color:var(--text-light);">更换刹车油</td>
+          <td style="padding:10px 8px; text-align:center; color:var(--gold); font-family:'DM Mono',monospace; font-weight:700;">¥180</td>
+          <td style="padding:10px 8px; text-align:right; color:var(--text-dim);">含工时</td>
+        </tr>
+        <tr style="border-bottom:1px solid rgba(255,255,255,0.04);">
+          <td style="padding:10px 8px; color:var(--text-light);">更换防冻液</td>
+          <td style="padding:10px 8px; text-align:center; color:var(--gold); font-family:'DM Mono',monospace; font-weight:700;">¥180</td>
+          <td style="padding:10px 8px; text-align:right; color:var(--text-dim);">含工时</td>
+        </tr>
+        <tr style="border-bottom:1px solid rgba(255,255,255,0.04);">
+          <td style="padding:10px 8px; color:var(--text-light);">更换变速箱油</td>
+          <td style="padding:10px 8px; text-align:center; color:var(--gold); font-family:'DM Mono',monospace; font-weight:700;">¥680 起</td>
+          <td style="padding:10px 8px; text-align:right; color:var(--text-dim);">循环机更换</td>
+        </tr>
+        <tr style="border-bottom:1px solid rgba(255,255,255,0.04);">
+          <td style="padding:10px 8px; color:var(--text-light);">清洗节气门</td>
+          <td style="padding:10px 8px; text-align:center; color:var(--gold); font-family:'DM Mono',monospace; font-weight:700;">¥80</td>
+          <td style="padding:10px 8px; text-align:right; color:var(--text-dim);">含工时</td>
+        </tr>
+        <tr style="border-bottom:1px solid rgba(255,255,255,0.04);">
+          <td style="padding:10px 8px; color:var(--text-light);">空调清洗+杀菌</td>
+          <td style="padding:10px 8px; text-align:center; color:var(--gold); font-family:'DM Mono',monospace; font-weight:700;">¥280</td>
+          <td style="padding:10px 8px; text-align:right; color:var(--text-dim);">可视化清洗</td>
+        </tr>
+        <tr style="border-bottom:1px solid rgba(255,255,255,0.04);">
+          <td style="padding:10px 8px; color:var(--text-light);">四轮定位</td>
+          <td style="padding:10px 8px; text-align:center; color:var(--gold); font-family:'DM Mono',monospace; font-weight:700;">¥180</td>
+          <td style="padding:10px 8px; text-align:right; color:var(--text-dim);">含工时</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="package-box reveal" style="margin-top:1.5rem;">
+    <div class="package-title">⚡ 特斯拉维修项目（新增）</div>
+    <div class="package-sub">Tesla Service Now Available</div>
+    <div style="overflow-x:auto;">
+      <table style="width:100%; border-collapse:collapse; font-size:0.95rem;">
+        <tr style="border-bottom:1px solid rgba(201,168,76,0.2);">
+          <th style="text-align:left; padding:12px 8px; color:var(--gold); font-weight:600;">项目</th>
+          <th style="text-align:center; padding:12px 8px; color:var(--gold); font-weight:600;">价格</th>
+          <th style="text-align:right; padding:12px 8px; color:var(--gold); font-weight:600;">备注</th>
+        </tr>
+        <tr style="border-bottom:1px solid rgba(255,255,255,0.04);">
+          <td style="padding:10px 8px; color:var(--text-light);">内置滤芯</td>
+          <td style="padding:10px 8px; text-align:center; color:var(--gold); font-family:'DM Mono',monospace; font-weight:700;">¥98</td>
+          <td style="padding:10px 8px; text-align:right; color:var(--text-dim);">含工时</td>
+        </tr>
+        <tr style="border-bottom:1px solid rgba(255,255,255,0.04);">
+          <td style="padding:10px 8px; color:var(--text-light);">外置滤芯</td>
+          <td style="padding:10px 8px; text-align:center; color:var(--gold); font-family:'DM Mono',monospace; font-weight:700;">¥298</td>
+          <td style="padding:10px 8px; text-align:right; color:var(--text-dim);">含工时</td>
+        </tr>
+        <tr style="border-bottom:1px solid rgba(255,255,255,0.04);">
+          <td style="padding:10px 8px; color:var(--text-light);">轮胎换位动平衡</td>
+          <td style="padding:10px 8px; text-align:center; color:var(--gold); font-family:'DM Mono',monospace; font-weight:700;">¥118</td>
+          <td style="padding:10px 8px; text-align:right; color:var(--text-dim);">四轮</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"><div class="line"></div></div>
+
+<!-- SELF CHECK -->
+<section class="section">
+  <div class="reveal">
+    <div class="section-label">Part 05 — 自查清单</div>
+    <h2 class="section-title">B48车主自查清单</h2>
+    <p class="section-desc">如果你的B48发动机出现以下任何一种情况，建议尽快到店检查。</p>
+  </div>
+
+  <div class="checklist-grid reveal">
+    <div class="checklist-item">
+      <span class="warn">⚠</span>
+      冷却液液位频繁下降
+    </div>
+    <div class="checklist-item">
+      <span class="warn">⚠</span>
+      发动机舱有白色烟雾或液体
+    </div>
+    <div class="checklist-item">
+      <span class="warn">⚠</span>
+      车底发现绿色/粉色液体痕迹
+    </div>
+    <div class="checklist-item">
+      <span class="warn">⚠</span>
+      暖风突然不热
+    </div>
+    <div class="checklist-item">
+      <span class="warn">⚠</span>
+      机油盖出现白色泡沫
+    </div>
+    <div class="checklist-item">
+      <span class="warn">⚠</span>
+      副水壶表面有白色/粉色结晶
+    </div>
+    <div class="checklist-item">
+      <span class="warn">⚠</span>
+      仪表盘冷却液报警灯亮起
+    </div>
+    <div class="checklist-item">
+      <span class="warn">⚠</span>
+      行驶超过6万公里未检修冷却系统
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="cta-content reveal">
+    <h2>别等抛锚了才想起来</h2>
+    <p>预约到店检查，30分钟出结果。<br>早发现、早处理，省钱更省心。</p>
+    <a href="tel:13306177278" class="cta-btn">
+      <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      13306177278 预约检查
+    </a>
+    <div class="cta-trust">
+      <span><span class="dot"></span> 免费代步车</span>
+      <span><span class="dot"></span> 维修全程可视</span>
+      <span><span class="dot"></span> 原厂配件保障</span>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>华胜豪华车专修 · 无锡东亭店 · 锡山区东亭街道</p>
+</footer>
+
+<script>
+  // Scroll reveal
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
